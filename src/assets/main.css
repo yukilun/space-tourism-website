@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-center lg:text-left text-white;
+  }
+  h1, .heading-1 {
+    @apply text-[80px] md:text-[150px] font-serif uppercase;
+  }
+  h2, .heading-2 {
+    @apply text-[56px] md:text-[80px] lg:text-[100px] font-serif uppercase;
+  }
+  h3, .heading-3 {
+    @apply text-[24px] md:text-[40px] xl:text-[56px] font-serif uppercase;
+  }
+  h4, .heading-4 {
+    @apply text-[16px] md:text-[24px] lg:text-[32px] font-serif uppercase;
+  }
+  h5, .heading-5 {
+    @apply text-[16px] md:text-[20px] lg:text-[28px] tracking-[4.75px] font-sans-heading uppercase text-light-purple;
+  }
+  p {
+    @apply text-[15px] md:text-[16px] lg:text-[18px];
+  }
+  .subheading-1 {
+    @apply text-[28px] font-serif uppercase;
+  }
+  .subheading-2 {
+    @apply text-[14px] tracking-[2.35px] font-sans-heading uppercase text-light-purple;
+  }
+  .nav-num {
+    @apply text-[16px] tracking-[2.7px] font-sans-heading font-bold;
+  }
+  .nav-text {
+    @apply text-[16px] md:text-[14px] lg:text-[16px] tracking-[2.7px] font-sans-heading uppercase;
+  }
+  .step-num {
+    @apply text-[16px] md:text-[20px] lg:text-[28px] tracking-[2.7px] font-sans-heading font-bold opacity-25;
+  }
+  .step-text {
+    @apply text-[16px] md:text-[20px] lg:text-[28px] tracking-[2.7px] font-sans-heading uppercase;
+  }
+  .destination-nav-text {
+    @apply text-[14px] md:text-[16px] tracking-[2.36px] md:tracking-[2.7px] font-sans-heading uppercase text-light-purple;
+  }
+}
