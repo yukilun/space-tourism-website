@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/yukilun/space-tourism-website/](https://github.com/yukilun/space-tourism-website/)
-- Live Site URL: [https://yukilun.github.io/space-tourism-website//](https://yukilun.github.io/space-tourism-website//)
+- Live Site URL: [https://yukilun.github.io/space-tourism-website/](https://yukilun.github.io/space-tourism-website/)
 
 ## My process
 
