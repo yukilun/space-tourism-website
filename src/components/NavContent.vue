@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav aria-label="nav-menu">
         <ul class="flex flex-col gap-4 md:flex-row md:gap-9 lg:gap-12">
             <li v-for="nav, idx in navigation" :key="idx"
                 class="pl-8 py-2 border-white border-r-4 md:pl-0 md:py-10 md:border-r-0 md:border-b-[3px] 

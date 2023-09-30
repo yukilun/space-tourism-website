@@ -3,7 +3,7 @@
         <div class="logo py-6">
             <IconLogo />
         </div>
-        <button type="button" class="menu-open-btn py-6 md:hidden transition-all duration-300" :class="isOpenMenu && 'scale-0'" @click="toggleMenu">
+        <button type="button" class="menu-open-btn py-6 md:hidden transition-all duration-300" :class="isOpenMenu && 'scale-0'" @click="toggleMenu" aria-label="open-navbar">
             <IconHamburger />
         </button>
         <div class="decoration-line bg-white bg-opacity-25 h-[1px] flex-grow ml-16 -mr-8 z-10 hidden lg:block">
