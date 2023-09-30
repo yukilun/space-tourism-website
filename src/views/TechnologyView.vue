@@ -21,8 +21,8 @@
           </div>
         </div>
         <div class="content-right technology-image order-first lg:order-last w-full lg:w-auto md:flex-grow flex justify-center lg:justify-end animate-fade-in-slow" :key="idx">
-          <img class="w-full object-contain lg:hidden" :src="getImageUrl(technology[idx].images.landscape)" :alt="technology[idx].name" />
-          <img class="object-contain hidden lg:block" :src="getImageUrl(technology[idx].images.portrait)" :alt="technology[idx].name" />
+          <img class="w-full object-contain lg:hidden" :src="images[idx][0]" :alt="technology[idx].name" />
+          <img class="object-contain hidden lg:block" :src="images[idx][1]" :alt="technology[idx].name" />
         </div>
       </div>
     </main>
@@ -31,15 +31,17 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { getImageUrl } from '../helpers/imageUrl';
 import { step, technology } from '../assets/data.json';
 import ViewContainer from '../components/ViewContainer.vue';
 import useSwipe from '../composables/swipe';
+import { useAssets } from '../composables/assets';
 
 const idx = ref(0);
 function updateIdx(newIdx) {
   idx.value = newIdx;
 }
+
+const images = technology.map((t) => [useAssets(t.images.landscape), useAssets(t.images.portrait)]);
 
 const content = ref(null);
 onMounted(() => {

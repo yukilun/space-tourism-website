@@ -12,7 +12,7 @@
         <div
           class="content-left destination-image md:flex-grow md:w-full flex flex-col items-center animate-fade-in-slow" :key="idx">
           <img class="w-[170px] md:w-[300px] lg:w-[445px] animate-rotate-loop" draggable="false"
-            :src="getImageUrl(destinations[idx].images.webp)" :alt="destinations[idx].name" />
+            :src="images[idx]" :alt="destinations[idx].name" />
         </div>
         <div class="content-right max-w-[573px] lg:max-w-[445px]">
           <div
@@ -46,15 +46,17 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import { getImageUrl } from '../helpers/imageUrl';
 import { step, destinations } from '../assets/data.json';
 import ViewContainer from '../components/ViewContainer.vue';
 import useSwipe from '../composables/swipe';
+import { useAssets } from '../composables/assets';
 
 const idx = ref(0);
 function updateIdx(newIdx) {
   idx.value = newIdx;
 }
+
+const images = destinations.map((d) => useAssets(d.images.webp));
 
 const content = ref(null);
 onMounted(() => {

@@ -25,7 +25,7 @@
           class="content-right crew-image order-first md:order-last h-[223px] md:h-auto md:w-[458px] lg:h-auto w-full lg:w-0 md:flex-grow flex flex-col md:justify-end lg:items-end 
                 border-b-[1px] border-[#383B4B] md:border-b-0 animate-fade-in-slow"
           :key="idx">
-          <img class="max-h-full object-contain" :src="getImageUrl(crew[idx].images.webp)" :alt="crew[idx].name" draggable="false"/>
+          <img class="max-h-full object-contain" :src="images[idx]" :alt="crew[idx].name" draggable="false"/>
         </div>
       </div>
     </main>
@@ -34,15 +34,17 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { getImageUrl } from '../helpers/imageUrl';
 import { step, crew } from '../assets/data.json';
 import ViewContainer from '../components/ViewContainer.vue';
 import useSwipe from '../composables/swipe';
+import { useAssets } from '../composables/assets';
 
 const idx = ref(0);
 function updateIdx(newIdx) {
   idx.value = newIdx;
 }
+
+const images = crew.map((c) => useAssets(c.images.webp));
 
 const content = ref(null);
 onMounted(() => {
