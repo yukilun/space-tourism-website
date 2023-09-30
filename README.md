@@ -49,7 +49,7 @@ Users should be able to:
 
 - Transformed existing responsive web design (Figma) into code
 - Utilized Vue + Vue router for single-page application (SPA) development
-- Create customize Vue composables for swiping events
+- Create customized Vue composables for swiping events and dynamic image assets
 
 ### Continued development
 
