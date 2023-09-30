@@ -62,11 +62,11 @@ export default function useSwipe(target, options = {threshold: 10}) {
         }
     }
 
-    target.addEventListener('mousedown', handlePointerDown);
-    target.addEventListener('mouseup', handlePointerUp);
-    target.addEventListener('touchstart', handlePointerDown);
-    target.addEventListener('touchmove', handlePointerMove);
-    target.addEventListener('touchend', handlePointerUp);
+    target.addEventListener('mousedown', handlePointerDown, { passive: true });
+    target.addEventListener('mouseup', handlePointerUp, { passive: true });
+    target.addEventListener('touchstart', handlePointerDown, { passive: true });
+    target.addEventListener('touchmove', handlePointerMove, { passive: true });
+    target.addEventListener('touchend', handlePointerUp, { passive: true });
 
     onUnmounted(()=> {
         target.removeEventListener('mousedown', handlePointerDown);
