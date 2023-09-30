@@ -40,29 +40,24 @@ export default function useSwipe(target, options = {threshold: 10}) {
     }
 
     function handleGesture() {
-        console.log('handle!');
         const netX = Math.abs(pointerEndX.value - pointerStartX.value);
         const netY = Math.abs(pointerEndY.value - pointerStartY.value);
         if(netX > netY && netX > options.threshold) {
             // swipe left or right
             if(pointerEndX.value > pointerStartX.value) {
-                console.log('swipe right');
-                swipeRight();
+                if(swipeRight) swipeRight();
             }
             else {
-                console.log('swipe left');
-                swipeLeft();
+                if(swipeLeft) swipeLeft();
             }
         }
         else if(netY > netX && netY > options.threshold) {
             // swipe up or down
             if(pointerEndY.value > pointerStartY.value) {
-                console.log('swipe down');
-                swipeDown();
+                if(swipeDown) swipeDown();
             }
             else {
-                console.log('swipe up');
-                swipeUp();
+                if(swipeUp) swipeUp();
             }
         }
     }
